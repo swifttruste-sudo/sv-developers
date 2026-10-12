@@ -1,6 +1,7 @@
 import { Phone, MessageCircle, CalendarCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Reveal } from "@/components/common/Reveal";
+import Magnetic from "@/components/common/Magnetic";
 import { SITE, waLink } from "@/data/site";
 
 export default function CtaBand() {
@@ -29,21 +30,27 @@ export default function CtaBand() {
         </Reveal>
         <Reveal delay={0.12}>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link to="/contact" data-testid="cta-band-book-visit-btn" className="btn-gold">
-              <CalendarCheck size={16} /> Book a Site Visit
-            </Link>
-            <a href={SITE.phoneHref} data-testid="cta-band-call-btn" className="btn-ghost-light">
-              <Phone size={16} /> {SITE.phoneDisplay}
-            </a>
-            <a
-              href={waLink("Hi SV Developers, I'd like to get started. Can we talk?")}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="cta-band-whatsapp-btn"
-              className="btn-ghost-light"
-            >
-              <MessageCircle size={16} /> WhatsApp Us
-            </a>
+            <Magnetic>
+              <Link to="/contact" data-testid="cta-band-book-visit-btn" className="btn-gold">
+                <CalendarCheck size={16} /> Book a Site Visit
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <a href={SITE.phoneHref} data-testid="cta-band-call-btn" className="btn-ghost-light">
+                <Phone size={16} /> {SITE.phoneDisplay}
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={waLink("Hi SV Developers, I'd like to get started. Can we talk?")}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="cta-band-whatsapp-btn"
+                className="btn-ghost-light"
+              >
+                <MessageCircle size={16} /> WhatsApp Us
+              </a>
+            </Magnetic>
           </div>
         </Reveal>
       </div>

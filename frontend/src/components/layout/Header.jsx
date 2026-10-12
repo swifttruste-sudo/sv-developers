@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Phone, CalendarCheck } from "lucide-react";
 import Logo from "@/components/Logo";
+import Magnetic from "@/components/common/Magnetic";
 import { NAV_LINKS, SITE } from "@/data/site";
 
 export default function Header() {
@@ -31,7 +32,7 @@ export default function Header() {
   }, [open]);
 
   const linkClass = ({ isActive }) =>
-    `relative px-1 py-2 text-[13px] font-semibold tracking-wide transition-colors duration-200 ${
+    `nav-link relative px-1 py-2 text-[13px] font-semibold tracking-wide transition-colors duration-200 ${
       isActive ? "text-navy" : "text-steel hover:text-navy"
     }`;
 
@@ -76,10 +77,12 @@ export default function Header() {
             <Phone size={15} strokeWidth={2.2} className="text-gold" />
             {SITE.phoneDisplay}
           </a>
-          <Link to="/contact" data-testid="book-site-visit-btn" className="btn-gold !px-5 !py-2.5">
-            <CalendarCheck size={15} />
-            Book a Site Visit
-          </Link>
+          <Magnetic strength={0.25}>
+            <Link to="/contact" data-testid="book-site-visit-btn" className="btn-gold !px-5 !py-2.5">
+              <CalendarCheck size={15} />
+              Book a Site Visit
+            </Link>
+          </Magnetic>
         </div>
 
         <button

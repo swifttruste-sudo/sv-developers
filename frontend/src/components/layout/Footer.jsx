@@ -32,7 +32,7 @@ export default function Footer() {
               <li key={item.to + item.label}>
                 <Link
                   to={item.to}
-                  className="text-sm text-white/70 transition-colors hover:text-gold"
+                  className="link-sweep text-sm text-white/70 transition-colors hover:text-gold"
                   data-testid={`footer-link-${item.to === "/" ? "home" : item.to.slice(1)}`}
                 >
                   {item.label}
@@ -49,7 +49,7 @@ export default function Footer() {
               <li key={p.slug}>
                 <Link
                   to={`/projects/${p.slug}`}
-                  className="text-sm text-white/70 transition-colors hover:text-gold"
+                  className="link-sweep text-sm text-white/70 transition-colors hover:text-gold"
                   data-testid={`footer-project-link-${p.slug}`}
                 >
                   {p.name}
@@ -63,7 +63,7 @@ export default function Footer() {
           <h3 className="text-xs font-bold uppercase tracking-[0.24em] text-gold">Talk to Us</h3>
           <ul className="mt-5 space-y-4 text-sm">
             <li>
-              <a href={SITE.phoneHref} data-testid="footer-phone-link" className="inline-flex items-center gap-3 text-white/80 transition-colors hover:text-gold">
+              <a href={SITE.phoneHref} data-testid="footer-phone-link" className="link-sweep inline-flex items-center gap-3 text-white/80 transition-colors hover:text-gold">
                 <Phone size={16} className="shrink-0 text-gold" /> {SITE.phoneDisplay}
               </a>
             </li>
@@ -73,7 +73,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="footer-whatsapp-link"
-                className="inline-flex items-center gap-3 text-white/80 transition-colors hover:text-gold"
+                className="link-sweep inline-flex items-center gap-3 text-white/80 transition-colors hover:text-gold"
               >
                 <MessageCircle size={16} className="shrink-0 text-gold" /> WhatsApp Enquiry
               </a>

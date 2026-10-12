@@ -2,6 +2,7 @@ import { Building2, FileSearch, HeartHandshake, MapPinned, MessagesSquare, Users
 import SectionHeading from "@/components/common/SectionHeading";
 import { Reveal } from "@/components/common/Reveal";
 import CountUp from "@/components/common/CountUp";
+import { handleSpotlight } from "@/components/common/spotlight";
 import { WHY_CARDS } from "@/data/home";
 
 const ICONS = {
@@ -31,8 +32,9 @@ export default function WhySv({ detailed = false }) {
             return (
               <Reveal key={card.title} delay={i * 0.07} className={`${SPANS[i]} h-full`}>
                 <article
+                  onMouseMove={handleSpotlight}
                   data-testid={`why-card-${i + 1}`}
-                  className={`group flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-card ${
+                  className={`spotlight-card group flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-card ${
                     hero ? "navy-panel !border-0" : ""
                   }`}
                 >

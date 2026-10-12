@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, MessageCircle } from "lucide-react";
 import StatusChip from "@/components/common/StatusChip";
+import { handleSpotlight } from "@/components/common/spotlight";
 import { waLink } from "@/data/site";
 
 export default function ProjectCard({ project, index = 0 }) {
@@ -12,8 +13,9 @@ export default function ProjectCard({ project, index = 0 }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.97 }}
       transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.3), ease: [0.22, 1, 0.36, 1] }}
+      onMouseMove={handleSpotlight}
       data-testid={`project-card-${project.slug}`}
-      className="group flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
+      className="spotlight-card group flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
     >
       <Link
         to={`/projects/${project.slug}`}

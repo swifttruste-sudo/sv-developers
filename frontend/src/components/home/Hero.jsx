@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import Magnetic from "@/components/common/Magnetic";
 import { SITE } from "@/data/site";
 
 const HERO_IMG =
@@ -74,12 +75,16 @@ export default function Hero() {
           </motion.p>
 
           <motion.div {...rise(0.9)} className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link to="/projects" data-testid="hero-explore-projects-btn" className="btn-gold">
-              Explore Our Projects <ArrowRight size={16} />
-            </Link>
-            <Link to="/contact" data-testid="hero-talk-to-team-btn" className="btn-ghost-light">
-              Talk to Our Team
-            </Link>
+            <Magnetic>
+              <Link to="/projects" data-testid="hero-explore-projects-btn" className="btn-gold">
+                Explore Our Projects <ArrowRight size={16} />
+              </Link>
+            </Magnetic>
+            <Magnetic>
+              <Link to="/contact" data-testid="hero-talk-to-team-btn" className="btn-ghost-light">
+                Talk to Our Team
+              </Link>
+            </Magnetic>
           </motion.div>
 
           <motion.div {...rise(1.05)} className="mt-14 flex items-center gap-4">

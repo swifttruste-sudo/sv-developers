@@ -15,7 +15,7 @@ export default function Projects() {
     <>
       <SectionHeading
         eyebrow="All Projects"
-        title="Explore Opportunities for Your Next Chapter."
+        title="Every Opportunity, Presented Honestly."
         description="Every listing states its current status honestly — including what is verified, what is stated by the company, and what is still being reconfirmed."
       />
 

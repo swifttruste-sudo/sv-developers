@@ -2,6 +2,7 @@ import PageMeta from "@/components/common/PageMeta";
 import PageHero from "@/components/common/PageHero";
 import ImageBand from "@/components/common/ImageBand";
 import { FadePage, Reveal } from "@/components/common/Reveal";
+import { handleSpotlight } from "@/components/common/spotlight";
 import ProcessTimeline from "@/components/home/ProcessTimeline";
 import CtaBand from "@/components/home/CtaBand";
 import { Quote } from "lucide-react";
@@ -50,7 +51,11 @@ export default function BuyerFirst() {
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {COMMITMENTS.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.06} className="h-full">
-                <article className="flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-card">
+                <article
+                  onMouseMove={handleSpotlight}
+                  data-testid={`commitment-card-${i + 1}`}
+                  className="spotlight-card flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-card"
+                >
                   <span className="font-display text-3xl font-bold text-gold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
