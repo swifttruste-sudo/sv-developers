@@ -60,6 +60,12 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 ## Implemented (2026-10-12, round 8)
 - Colour gradient pass (all on-brand): gradient gold buttons + navy buttons, gold-gradient headline accents ("Confidence."), gradient stat numbers (55s, 01-06, 404), aura glows on hero/PageHero/CTA band, soft section washes (white→ice, white→ivory), gradient footer. Pushed to GitHub main (2b87596).
 
+## Implemented (2026-10-12, round 9)
+- Find by Location: location filter (All / Shankarpally / Tellapur–Kollur / TBC) on Projects + Home discovery, plus free-text search ("name, location or type") with live results count — all honest, derived from locationArea fields, nothing invented.
+- Compare: "Add to Compare" on every card + detail page, floating compare tray (max 3, localStorage-persisted), /compare page with side-by-side table (image, bestFor tag, status, type, location, developer, highlights, union of specs with "—" gaps, WhatsApp/View actions; horizontal scroll on mobile).
+- Ratings & suggestions: Information-Clarity Ratings (documentation / location / specification / stage — rates how completely documented each listing is, never project quality, stated explicitly), animated bars, and "Our Honest Suggestion" engine naming the best-documented listing with reason + caveat + "verify independently" note. Chatbot knows the features.
+- Pushed to GitHub main (d60f485).
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
