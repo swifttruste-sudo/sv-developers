@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <section data-testid="not-found-page" className="navy-panel flex min-h-[80vh] flex-col items-center justify-center px-6 py-32 text-center">
       <PageMeta title="Page Not Found" description="The page you're looking for doesn't exist at SV Developers." />
-      <p className="font-display text-7xl font-bold text-gold sm:text-8xl">404</p>
+      <p className="text-gold-gradient font-display text-7xl font-bold sm:text-8xl">404</p>
       <h1 className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">
         This plot is still open land.
       </h1>

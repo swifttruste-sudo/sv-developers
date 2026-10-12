@@ -52,7 +52,7 @@ export default function WhySv({ detailed = false }) {
                   </div>
 
                   {hero && (
-                    <p className="mt-10 font-display text-6xl font-bold text-gold lg:text-7xl" data-testid="why-hero-stat">
+                    <p className="text-gold-gradient mt-10 font-display text-6xl font-bold lg:text-7xl" data-testid="why-hero-stat">
                       <CountUp to={55} />
                     </p>
                   )}

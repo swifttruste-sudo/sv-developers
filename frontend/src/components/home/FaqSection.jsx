@@ -5,7 +5,7 @@ import { FAQS } from "@/data/faqs";
 
 export default function FaqSection() {
   return (
-    <section data-testid="faq-section" className="bg-white py-20 lg:py-28">
+    <section data-testid="faq-section" className="bg-gradient-to-b from-ice/50 via-white to-white py-20 lg:py-28">
       <div className="container-x grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
         <div>
           <SectionHeading

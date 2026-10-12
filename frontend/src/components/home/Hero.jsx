@@ -37,6 +37,14 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-r from-midnight/95 via-navy/75 to-navy/35" />
       <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-midnight/40" />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-44 left-[-8%] h-[500px] w-[500px] rounded-full bg-gold/15 blur-[130px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 right-[12%] h-[380px] w-[380px] rounded-full bg-[#1a5cd8]/30 blur-[110px]"
+      />
 
       <motion.div style={{ opacity: contentFade }} className="container-x relative z-10 pb-24 pt-36 sm:pt-40">
         <div className="max-w-3xl">
@@ -51,7 +59,7 @@ export default function Hero() {
                   initial={{ y: "115%" }}
                   animate={{ y: 0 }}
                   transition={{ duration: 1, delay: 0.25 + i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-                  className={`block ${line.gold ? "relative inline-block text-gold" : ""}`}
+                  className={`block ${line.gold ? "text-gold-gradient relative inline-block" : ""}`}
                 >
                   {line.text}
                   {line.gold && (

@@ -56,7 +56,7 @@ export default function BuyerFirst() {
                   data-testid={`commitment-card-${i + 1}`}
                   className="spotlight-card flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-card"
                 >
-                  <span className="font-display text-3xl font-bold text-gold">
+                  <span className="text-gold-gradient font-display text-3xl font-bold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-4 font-display text-lg font-bold text-navy">{c.title}</h3>

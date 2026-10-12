@@ -7,7 +7,7 @@ import { PROJECTS } from "@/data/projects";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="bg-midnight text-white" data-testid="site-footer">
+    <footer className="bg-[linear-gradient(180deg,#0a2a50_0%,#07182f_55%)] text-white" data-testid="site-footer">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:py-20">
         <div>
           <Logo dark imgClassName="h-12 w-auto" />

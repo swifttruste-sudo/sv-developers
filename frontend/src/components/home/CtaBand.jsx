@@ -9,6 +9,10 @@ export default function CtaBand() {
     <section data-testid="cta-band" className="navy-panel relative overflow-hidden">
       <div
         aria-hidden
+        className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[560px] -translate-x-1/2 rounded-full bg-gold/15 blur-[110px]"
+      />
+      <div
+        aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center gap-3 opacity-[0.07]"
       >
         <span className="h-16 w-10 bg-white" />
@@ -21,7 +25,8 @@ export default function CtaBand() {
         <Reveal>
           <p className="eyebrow justify-center !text-gold">Get Started</p>
           <h2 className="mx-auto mt-5 max-w-3xl font-display text-3xl font-bold leading-[1.18] text-white sm:text-4xl">
-            The Right Property. The Right Guidance. A Future Built With Confidence.
+            The Right Property. The Right Guidance. A Future Built With{" "}
+            <span className="text-gold-gradient">Confidence.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-white/65">
             Tell us what you're looking for and we'll shortlist opportunities

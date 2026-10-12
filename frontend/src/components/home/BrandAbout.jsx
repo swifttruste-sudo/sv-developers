@@ -109,7 +109,7 @@ export default function BrandAbout() {
             className="relative aspect-[4/3.4] w-full rounded-xl object-cover shadow-lift"
           />
           <TiltBadge>
-            <p className="font-display text-3xl font-bold text-gold">
+            <p className="text-gold-gradient font-display text-3xl font-bold">
               <CountUp to={55} />
             </p>
             <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80">

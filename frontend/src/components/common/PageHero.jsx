@@ -1,8 +1,10 @@
-import { Reveal } from "@/components/common/Reveal";
+import { Reveal } from "./Reveal";
 
 export default function PageHero({ eyebrow, title, description, children, testid }) {
   return (
     <section data-testid={testid || "page-hero"} className="navy-panel relative overflow-hidden pb-16 pt-32 sm:pt-36 lg:pb-24 lg:pt-44">
+      <div aria-hidden className="pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full bg-[#1a5cd8]/25 blur-3xl" />
+      <div aria-hidden className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
       <div aria-hidden className="pointer-events-none absolute -right-16 bottom-0 flex items-end gap-3 opacity-[0.08]">
         <span className="h-20 w-9 bg-white" />
         <span className="h-32 w-9 bg-white" />

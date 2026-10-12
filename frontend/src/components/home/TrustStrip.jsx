@@ -3,7 +3,7 @@ import { Reveal } from "@/components/common/Reveal";
 
 export default function TrustStrip() {
   return (
-    <section data-testid="trust-strip" className="border-b border-navy/10 bg-white">
+    <section data-testid="trust-strip" className="bg-gradient-to-b from-white via-white to-ice/70 border-b border-navy/10">
       <div className="container-x">
         <div className="grid grid-cols-2 lg:grid-cols-4">
           {TRUST_ITEMS.map((item, i) => (

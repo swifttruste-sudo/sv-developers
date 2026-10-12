@@ -95,7 +95,12 @@
     }
 
     .btn-gold {
-        @apply inline-flex items-center justify-center gap-2.5 rounded-md bg-gold px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-midnight transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffbe2e] hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+        @apply inline-flex items-center justify-center gap-2.5 rounded-md px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-midnight transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
+        background: linear-gradient(135deg, #ffbe2e 0%, #f5aa00 55%, #e09a00 100%);
+    }
+
+    .btn-gold:hover {
+        background: linear-gradient(135deg, #ffce4d 0%, #ffb01f 55%, #eda500 100%);
     }
 
     .btn-gold {
@@ -198,7 +203,12 @@
     }
 
     .btn-navy {
-        @apply inline-flex items-center justify-center gap-2.5 rounded-md bg-navy px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-deep hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy;
+        @apply inline-flex items-center justify-center gap-2.5 rounded-md px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy;
+        background: linear-gradient(135deg, #0a3266 0%, #062858 55%, #041d40 100%);
+    }
+
+    .btn-navy:hover {
+        background: linear-gradient(135deg, #0d3a75 0%, #07305f 55%, #062444 100%);
     }
 
     .btn-ghost-light {
@@ -218,7 +228,7 @@
     }
 
     .navy-panel {
-        background: linear-gradient(160deg, #0a3266 0%, #062858 48%, #07182f 100%);
+        background: linear-gradient(160deg, #0d3a75 0%, #062858 46%, #07182f 100%);
     }
 
     .gold-rule {

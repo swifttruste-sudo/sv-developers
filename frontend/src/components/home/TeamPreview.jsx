@@ -7,7 +7,7 @@ import { TEAM } from "@/data/team";
 
 export default function TeamPreview() {
   return (
-    <section data-testid="team-preview-section" className="bg-ivory py-20 lg:py-28">
+    <section data-testid="team-preview-section" className="bg-gradient-to-b from-white via-ivory to-ivory py-20 lg:py-28">
       <div className="container-x">
         <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
           <SectionHeading

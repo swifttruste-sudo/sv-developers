@@ -12,7 +12,7 @@ export default function ProjectDiscovery() {
   const visible = PROJECTS.filter((p) => filter === "all" || p.type === filter);
 
   return (
-    <section data-testid="project-discovery-section" className="bg-ice py-20 lg:py-28">
+    <section data-testid="project-discovery-section" className="bg-gradient-to-b from-white to-ice py-20 lg:py-28">
       <div className="container-x">
         <SectionHeading
           eyebrow="Project Discovery"
