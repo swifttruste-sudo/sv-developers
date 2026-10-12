@@ -57,6 +57,9 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 - Fixed duplicate headline on /projects (now "Every Opportunity, Presented Honestly.").
 - Verified hover states via mouse-move captures; mobile unaffected (cursor/spotlight are pointer-fine only). Pushed to GitHub main (15ad0cf).
 
+## Implemented (2026-10-12, round 8)
+- Colour gradient pass (all on-brand): gradient gold buttons + navy buttons, gold-gradient headline accents ("Confidence."), gradient stat numbers (55s, 01-06, 404), aura glows on hero/PageHero/CTA band, soft section washes (white→ice, white→ivory), gradient footer. Pushed to GitHub main (2b87596).
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
