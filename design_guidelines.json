@@ -1,0 +1,68 @@
+{
+  "project_name": "SV DEVELOPERS",
+  "archetype": "LUXURY ARCHITECTURAL & EDITORIAL REAL ESTATE",
+  "emotional_tone": "Prestigious, Authoritative, Transparent, Bespoke, Hyderabad-Centric",
+  "colors": {
+    "primary_navy": "#062858",
+    "deep_midnight_navy": "#07182F",
+    "signature_gold": "#F5AA00",
+    "secondary_gold": "#C6A56A",
+    "pure_white": "#FFFFFF",
+    "soft_ice_blue": "#EDF3FA",
+    "warm_ivory": "#F7F6F2",
+    "light_gold": "#FFF4D6",
+    "charcoal": "#202A38",
+    "muted_slate": "#697586"
+  },
+  "typography": {
+    "headings": "Manrope (or Space Grotesk) with tracking-tight, fluid clamp() sizes maxing at text-6xl for H1",
+    "body": "Inter, leading-relaxed, text-base on desktop, text-sm on mobile",
+    "overlines_labels": "Manrope/Inter uppercase text-xs tracking-[0.25em] text-[#F5AA00] font-semibold"
+  },
+  "image_urls": {
+    "hero_banner": "https://images.unsplash.com/photo-1712793042263-cf9eab9a229a?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "project_villas": "https://images.unsplash.com/photo-1722421492323-eaf9c401befe?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "project_luxury_estate": "https://images.unsplash.com/photo-1670589953882-b94c9cb380f5?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "project_plotted_community": "https://images.unsplash.com/photo-1717167398817-121e3c283dbb?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "project_apartments": "https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "interior_living_1": "https://images.unsplash.com/photo-1682184805271-11671b7ecf4c?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "interior_living_2": "https://images.unsplash.com/photo-1758448755952-42b404bc6f39?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "interior_living_3": "https://images.unsplash.com/photo-1757924461488-ef9ad0670978?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "interior_living_4": "https://images.unsplash.com/photo-1678762200388-51e11225d4de?crop=entropy&cs=srgb&fm=jpg&q=85"
+  },
+  "pages_blueprint": {
+    "Home": "Cinematic hero with staged motion -> Trust metrics strip (55 YRS COMBINED EXP / 6 CORE MEMBERS / BUYER FIRST / HYDERABAD) -> Editorial statement section -> Filterable Project Showcase (5 projects) -> 5-Step Buyer-First Process interactive timeline -> Buyer Confidence & Verification section -> Contact & Direct WhatsApp CTA",
+    "About": "Origin narrative -> Core Founders (6 Members with neutral initial monograms & background) -> Vision & Mission -> Architectural Philosophy",
+    "All Projects": "Full catalog with category filter tabs (ALL | VILLA PLOTS | VILLAS | PLOTTED COMMUNITIES | APARTMENTS) -> Search & Location filter -> Verification Pending status badges -> Project inquiry trigger",
+    "Project Detail 1 (SV Urban Heights)": "High-rise apartments detail -> Overview -> Location map context -> Floor plans / Layout specs -> Transparent verification label -> Inquiry modal/form",
+    "Project Detail 2 (SV Emerald Greens)": "Plotted Community detail -> Site master plan specs -> Elevation highlights -> Amenities list -> Inquiry CTA",
+    "Project Detail 3 (SV Signature Enclave)": "Luxury Villas detail -> Architectural highlights -> Plot sizes -> High-res gallery -> Contact concierge",
+    "Project Detail 4 (SV Royal Palms)": "Premium Villa Plots detail -> Boundary & road infrastructure specs -> Strategic connectivity -> Site visit booking",
+    "Project Detail 5 (SV Silicon Meadows)": "Tech-Corridor Plotted Community -> Proximity to IT hubs -> Plot dimensions -> Infrastructure status -> Instant WhatsApp callback",
+    "Team": "6 Core Leadership Profiles represented with elegant monogram avatars (e.g., 'SV', 'SK', 'AR'), professional backgrounds, domain expertise in Hyderabad market, combined 55 years experience narrative",
+    "Why Choose Us": "4 Key Pillars (Transparent Title Verification, Zero-Jargon Buying, Prime Strategic Locations, Buyer-Centric Execution) -> Interactive comparison card",
+    "Buyer-First": "Detailed breakdown of SV's buyer rights guarantee, legal clear-title documentation protocol, and step-by-step assistance from token to registration",
+    "Contact": "Dual channel contact hub: Live form posting to API + direct high-priority WhatsApp deep link button, interactive Google Map location placeholder for Hyderabad HQ, office address & working hours",
+    "Privacy Policy": "Standard compliant legal text formatted with high legibility",
+    "Disclaimer": "Comprehensive real estate legal disclaimer clarifying new corporate identity, 55-year cumulative team metric, and verification status of upcoming projects"
+  },
+  "components_layout_rules": {
+    "header": "Sticky compacting nav bar with backdrop-blur-xl bg-[#07182F]/90 border-b border-white/10 z-50. Gold active indicator on nav items. Mobile drawer with ESC key handler & body scroll lock",
+    "hero": "Staggered framer-motion sequence: eyebrow -> headline -> paragraph -> dual CTAs (Explore Projects in Gold, Contact Concierge in Navy border). Background subtle ambient gradient overlay over architectural photo",
+    "trust_strip": "Dark midnight navy #07182F background with 4 key metrics: '55+ YRS Combined Team Exp', '6 Core Leaders', 'Buyer-First Policy', 'Hyderabad Prime Hubs'. Precise gold dividers and bold numbers",
+    "project_grid": "AnimatePresence with layout animations. Filter buttons styled with rounded-full pill shapes, gold highlight on active pill. Cards feature hover zoom, transparent 'Verification Pending' status badges, gold accent details",
+    "process_timeline": "Interactive 5-step horizontal/vertical line with connecting gold trace indicator. Active step unveils detailed buyer guidance",
+    "team_grid": "6 cards with initial monograms (e.g. 'SV' in gold border box), neutral slate backgrounds, bio highlights, no fake stock photos",
+    "contact_form": "Shadcn Form / input components with floating labels, submission handler with Sonner toast notification + direct WhatsApp link generator",
+    "footer": "Dark midnight navy #07182F surface with rising skyline geometric logo motif, quick links grid, contact info, and legal disclaimer"
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Use data-testid attributes on ALL interactive elements (buttons, inputs, filters, links, cards, tabs, mobile menu trigger)",
+    "Strictly follow brand colors: #062858 primary navy, #07182F midnight navy, #F5AA00 signature gold, #C6A56A secondary gold, #EDF3FA soft ice blue, #F7F6F2 warm ivory. Gold ONLY for CTAs, highlights, badges, and active indicators",
+    "Never use dark colors as gradients. Do not use generic center-aligned layouts for full page text",
+    "Include content integrity: 55 years is cumulative experience of the 6 core members; use neutral monogram avatars for team; mark status as 'Verification Pending'",
+    "Use specific CSS transitions (e.g. transition-colors, transition-transform duration-300), DO NOT use 'transition: all'",
+    "Ensure mobile nav drawer traps focus, closes on escape, and prevents body scrolling",
+    "All form fields must be accessible with proper label associations and data-testid attributes"
+  ]
+}

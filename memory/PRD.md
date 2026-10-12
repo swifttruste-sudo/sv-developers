@@ -1,0 +1,38 @@
+# SV Developers — PRD
+
+## Original Problem Statement
+Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-based real estate development, promotion, marketing and sales company. Premium/futuristic navy-and-gold identity derived from the official logo, 10 pages (Home, About, All Projects, 5 Project Details, Team, Why Choose Us, Buyer-First, Contact, Privacy Policy, Disclaimer), filterable project grid, process timeline, FAQ accordion, contact form with backend persistence and WhatsApp integration. Strict content integrity: no invented prices, dates, approvals, or stats; company is new, 55 years = combined core-team experience only.
+
+## Architecture
+- Frontend: React 19 (CRA + craco), Tailwind 3.4, react-router-dom v7, framer-motion, lucide-react. Brand tokens in tailwind.config.js; design-system classes in index.css (btn-gold, btn-navy, eyebrow, navy-panel, field-input…).
+- Data layer: src/data/{site,projects,team,faqs,home}.js — centralized, editable project facts with transparency notes.
+- Backend: FastAPI (server.py) — POST/GET /api/enquiries persisted to MongoDB via BaseDocument/PyObjectId pattern; GET /api health.
+- Components: layout (Header w/ compact sticky + mobile drawer, Footer), common (PageHero, SectionHeading, Reveal, PageMeta, StatusChip), ProjectCard, TeamCard, FaqAccordion, ContactForm, home sections.
+
+## User Personas
+- Home-buyer (plots/villas around Hyderabad) exploring opportunities transparently.
+- Investor evaluating growth-corridor land with documentation awareness.
+- NRI/out-of-town buyer using WhatsApp/phone for remote enquiries.
+
+## Core Requirements (static)
+10 routes as specified, exact brand palette (#062858/#07182F/#F5AA00/#C6A56A/…), Space Grotesk + Inter, hero/trust-strip/about/discovery/why/process/buyer-first/team/FAQ/CTA homepage sections, working filters, honest status labels, editable spec tables, no published prices/approval badges.
+
+## Implemented (2026-10-12)
+- All 10 pages + 404, all routes direct-navigable; Header (gold active indicator, compact-on-scroll, escape-closing drawer with scroll lock), shared Footer.
+- Homepage sections A–J complete; filters animate (layout + AnimatePresence).
+- Contact form → MongoDB (verified end-to-end) + WhatsApp deep links site-wide (per-project prefilled messages).
+- SEO: per-page title/meta via PageMeta; favicon; og tags.
+- Backend /api/enquiries live-verified (POST 201 + GET).
+- Verified: desktop 1440 + mobile 390 screenshots (no overflow), mobile drawer escape, form submit success, project detail page.
+
+## Not Implemented / Placeholders (honest)
+- Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
+- Team photos: neutral monogram placeholders per brief.
+- Project facts kept "to be confirmed" where company must reconfirm (prices, approvals, possession, Silpa RRR specs, BBG identity).
+- Map, hours, email address not shown (none supplied — none invented).
+
+## Backlog
+- P1: Upload official logo + team photographs; reconfirm Shankarpally pricing & approvals → publish badges.
+- P1: Admin panel to view/reply enquiries (data already in Mongo).
+- P2: Add Shadnagar/Shabad project listings to data file when verified.
+- P2: Brochure downloads per project; gallery lightboxes.
