@@ -66,6 +66,9 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 - Ratings & suggestions: Information-Clarity Ratings (documentation / location / specification / stage — rates how completely documented each listing is, never project quality, stated explicitly), animated bars, and "Our Honest Suggestion" engine naming the best-documented listing with reason + caveat + "verify independently" note. Chatbot knows the features.
 - Pushed to GitHub main (d60f485).
 
+## Implemented (2026-10-12, round 10)
+- Find by Budget: indicative budget bands (Under ₹50L / ₹50L–₹1Cr / ₹1Cr–₹2Cr / Above ₹2Cr) on Projects + Home, rupee-styled select, combined with type + location + search. Mapping derived from stated facts (plot sizes vs premium villa configs); BBG appears in every band (pricing fully on request). Honesty note: "Budget bands are indicative — exact pricing is shared on request." Chatbot guidance updated. Pushed to GitHub main (34228d0).
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
