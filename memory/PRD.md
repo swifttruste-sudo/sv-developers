@@ -49,6 +49,9 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 - Refinements: project-detail hero image taller on mobile (16/10 → 21/9 on sm+), hero call FAB hidden on small screens (drawer/chat/footer carry contact).
 - Pushed to GitHub main (0e397fe).
 
+## Implemented (2026-10-12, round 6)
+- Exhaustive responsive sweep: all 14 routes + mobile drawer open + chat open + admin login at 360px, admin dashboard + reply flow at 390px — zero horizontal overflow in every state. Verified widths now: 360 / 390 / 768 / 1440 / 1920. No code changes required this round.
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
