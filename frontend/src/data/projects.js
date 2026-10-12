@@ -20,6 +20,8 @@ export const PROJECTS = [
     gallery: [
       "https://images.unsplash.com/photo-1631728884184-98ba78f39d1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHw0fHxhZXJpYWwlMjB2aWV3JTIwbHV4dXJ5JTIwcmVzaWRlbnRpYWwlMjBjb21tdW5pdHklMjB2aWxsYXMlMjBncmVlbmVyeXxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
       "https://images.unsplash.com/photo-1593714604578-d9e41b00c6c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjbHViSG91c2UlMjBzd2ltbWluZyUyMHBvb2wlMjByZXNvcnQlMjBldmVuaW5nfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1613850011958-cfb3e7364058?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjByZXNpZGVudGlhbCUyMGVudHJhbmNlJTIwZ2F0ZSUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBjbHViSG91c2UlMjBzd2ltbWluZyUyMHBvb2wlMjByZXNvcnQlMjBldmVuaW5nfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     ],
     shortDescription:
       "An HMDA & RERA approved residential villa-plot community with gated-community features, landscaped spaces and lifestyle amenities.",
@@ -68,6 +70,8 @@ export const PROJECTS = [
       "https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsdXh1cnklMjB2aWxsYSUyMGV4dGVyaW9yJTIwYXJjaGl0ZWN0dXJlJTIwZHVza3xlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     gallery: [
       "https://images.unsplash.com/photo-1706164971309-fb4785fe6ceb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBsdXh1cnklMjB2aWxsYSUyMGV4dGVyaW9yJTIwYXJjaGl0ZWN0dXJlJTIwZHVza3xlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBob21lJTIwaW50ZXJpb3IlMjBsaXZpbmdfcm9vbSUyMG1vZGVybnxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1562133567-b6a0a9c7e6eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBjbHViSG91c2UlMjBzd2ltbWluZyUyMHBvb2wlMjByZXNvcnQlMjBldmVuaW5nfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
       "https://images.unsplash.com/photo-1762811054947-605b20298615?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBsdXh1cnklMjB2aWxsYSUyMGV4dGVyaW9yJTIwYXJjaGl0ZWN0dXJlJTIwZHVza3xlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     ],
     shortDescription:
@@ -115,7 +119,10 @@ export const PROJECTS = [
     referenceUrl: "https://bbgindia.com/home",
     image:
       "https://images.unsplash.com/photo-1618954253860-6ef008b5722e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwzfHxhZXJpYWwlMjB2aWV3JTIwbHV4dXJ5JTIwcmVzaWRlbnRpYWwlMjBjb21tdW5pdHklMjB2aWxsYXMlMjBncmVlbmVyeXxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
-    gallery: [],
+    gallery: [
+      "https://images.unsplash.com/photo-1733060893177-dbf0678ae0d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwxfHxhZXJpYWwlMjB2aWV3JTIwbHV4dXJ5JTIwcmVzaWRlbnRpYWwlMjBjb21tdW5pdHklMjB2aWxsYXMlMjBncmVlbmVyeXxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1522136978985-530d13fff117?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMGJhbGNvbmlhcyUyMHBsYW50cyUyMGdyZWVuJTIwZmFjYWRlfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+    ],
     shortDescription:
       "Residential property opportunities associated with BBG India, explored through our enquiry service.",
     description: [
@@ -155,6 +162,8 @@ export const PROJECTS = [
       "https://images.unsplash.com/photo-1638290885571-086b7b8281a7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMGJhbGNvbmlhcyUyMHBsYW50cyUyMGdyZWVuJTIwZmFjYWRlfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     gallery: [
       "https://images.unsplash.com/photo-1642426020136-8a90aa58d31e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMGJhbGNvbmlhcyUyMHBsYW50cyUyMGdyZWVuJTIwZmFjYWRlfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1784118473837-dde33d0e5288?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBidWlsZGluZyUyMGJhbGNvbmlhcyUyMHBsYW50cyUyMGdyZWVuJTIwZmFjYWRlfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1564078516393-cf04bd966897?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob21lJTIwaW50ZXJpb3IlMjBsaXZpbmdfcm9vbSUyMG1vZGVybnxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     ],
     shortDescription:
       "A proposed residential concept with 3BHK duplex residences, planted balconies and landscaped community spaces.",
@@ -199,6 +208,9 @@ export const PROJECTS = [
       "https://images.unsplash.com/photo-1741526998650-aba9d4ea81b8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxyZXNpZGVudGlhbCUyMHBsb3QlMjBsYXlvdXQlMjBhZXJpYWwlMjByb2FkcyUyMGxhbmQlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     gallery: [
       "https://images.unsplash.com/photo-1561352335-f8a297b7d29e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxyZXNpZGVudGlhbCUyMHBsb3QlMjBsYXlvdXQlMjBhZXJpYWwlMjByb2FkcyUyMGxhbmQlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1565779735575-d6c3443ee666?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHw0fHxyZXNpZGVudGlhbCUyMHBsb3QlMjBsYXlvdXQlMjBhZXJpYWwlMjByb2FkcyUyMGxhbmQlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1506092309076-af15fb0051e3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMHBsb3QlMjBsYXlvdXQlMjBhZXJpYWwlMjByb2FkcyUyMGxhbmQlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
+      "https://images.unsplash.com/photo-1765160602575-b50b54ff3a69?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjByZXNpZGVudGlhbCUyMGVudHJhbmNlJTIwZ2F0ZSUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     ],
     shortDescription:
       "A residential plotted development around a planned layout, internal roads, landscaped spaces and community amenities.",

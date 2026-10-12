@@ -1,9 +1,13 @@
 import PageMeta from "@/components/common/PageMeta";
 import PageHero from "@/components/common/PageHero";
+import ImageReveal from "@/components/common/ImageReveal";
 import { FadePage, Reveal } from "@/components/common/Reveal";
 import ContactForm from "@/components/ContactForm";
 import { Phone, MessageCircle, MapPin } from "lucide-react";
 import { SITE, waLink } from "@/data/site";
+
+const CONTACT_IMG =
+  "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBob21lJTIwaW50ZXJpb3IlMjBsaXZpbmdfcm9vbSUyMG1vZGVybnxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1200";
 
 export default function Contact() {
   return (
@@ -27,6 +31,12 @@ export default function Contact() {
 
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-5">
+              <ImageReveal
+                src={CONTACT_IMG}
+                alt="Thoughtfully designed interior — representative image"
+                className="aspect-[16/10] rounded-xl shadow-card"
+              />
+
               <a
                 href={SITE.phoneHref}
                 data-testid="contact-info-phone-card"

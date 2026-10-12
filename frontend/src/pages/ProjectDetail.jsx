@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import PageMeta from "@/components/common/PageMeta";
 import StatusChip from "@/components/common/StatusChip";
+import GalleryGrid from "@/components/common/GalleryGrid";
 import { Reveal, FadePage } from "@/components/common/Reveal";
 import ProjectCard from "@/components/ProjectCard";
 import CtaBand from "@/components/home/CtaBand";
@@ -110,6 +111,15 @@ export default function ProjectDetail() {
                     </div>
                   ))}
                 </dl>
+              </Reveal>
+
+              <Reveal delay={0.05}>
+                <h2 className="mt-12 font-display text-2xl font-bold text-navy">Gallery</h2>
+                <p className="mt-2 max-w-xl text-[13px] leading-6 text-steel">
+                  Representative visuals of the lifestyle and property type — not
+                  actual site photographs. Ask us for the latest site images.
+                </p>
+                <GalleryGrid images={project.gallery} name={project.name} />
               </Reveal>
 
               <Reveal delay={0.05}>

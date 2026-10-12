@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPinned, Search, FileSearch, ShieldCheck, MessagesSquare, Handshake, TrendingUp } from "lucide-react";
 import PageMeta from "@/components/common/PageMeta";
 import PageHero from "@/components/common/PageHero";
+import ImageReveal from "@/components/common/ImageReveal";
 import SectionHeading from "@/components/common/SectionHeading";
 import { FadePage, Reveal } from "@/components/common/Reveal";
 import TrustStrip from "@/components/home/TrustStrip";
@@ -19,6 +20,21 @@ const ACTIVITIES = [
 
 const STORY_IMG =
   "https://images.unsplash.com/photo-1640877268187-2fa6b2ed7a5f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxhZXJpYWwlMjB2aWV3JTIwbHV4dXJ5JTIwcmVzaWRlbnRpYWwlMjBjb21tdW5pdHklMjB2aWxsYXMlMjBncmVlbmVyeXxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400";
+
+const COLLAGE = [
+  {
+    src: "https://images.unsplash.com/photo-1724582586529-62622e50c0b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBob21lJTIwaW50ZXJpb3IlMjBsaXZpbmdfcm9vbSUyMG1vZGVybnxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1000",
+    alt: "Thoughtfully designed modern interior — representative image",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1733060893177-dbf0678ae0d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwxfHxhZXJpYWwlMjB2aWV3JTIwbHV4dXJ5JTIwcmVzaWRlbnRpYWwlMjBjb21tdW5pdHklMjB2aWxsYXMlMjBncmVlbmVyeXxlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1000",
+    alt: "Landscaped residential community — representative image",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1613850011958-cfb3e7364058?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njl8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjByZXNpZGVudGlhbCUyMGVudHJhbmNlJTIwZ2F0ZSUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1000",
+    alt: "Greenery around a modern residential facade — representative image",
+  },
+];
 
 export default function About() {
   return (
@@ -77,6 +93,20 @@ export default function About() {
       </section>
 
       <TrustStrip />
+
+      <section className="bg-ivory pb-20 pt-16 lg:pb-28" data-testid="about-collage">
+        <div className="container-x grid gap-5 sm:grid-cols-3">
+          {COLLAGE.map((img, i) => (
+            <ImageReveal
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              className="aspect-[4/5] rounded-xl shadow-card"
+              delay={i * 0.12}
+            />
+          ))}
+        </div>
+      </section>
 
       <section className="bg-white py-20 lg:py-28" data-testid="about-activities">
         <div className="container-x">

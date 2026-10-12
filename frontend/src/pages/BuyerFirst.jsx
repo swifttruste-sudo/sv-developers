@@ -1,10 +1,14 @@
 import PageMeta from "@/components/common/PageMeta";
 import PageHero from "@/components/common/PageHero";
+import ImageBand from "@/components/common/ImageBand";
 import { FadePage, Reveal } from "@/components/common/Reveal";
 import ProcessTimeline from "@/components/home/ProcessTimeline";
 import CtaBand from "@/components/home/CtaBand";
 import { Quote } from "lucide-react";
 import { COMMITMENTS } from "@/data/home";
+
+const CALM_BAND =
+  "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBob21lJTIwaW50ZXJpb3IlMjBsaXZpbmdfcm9vbSUyMG1vZGVybnxlbnwwfHx8fDE3OTE4MjIyOTN8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1800";
 
 export default function BuyerFirst() {
   return (
@@ -58,6 +62,14 @@ export default function BuyerFirst() {
           </div>
         </div>
       </section>
+
+      <ImageBand
+        image={CALM_BAND}
+        eyebrow="Time to Evaluate"
+        title="Space to Think. Freedom to Decide."
+        caption="No countdowns, no pressure — just the information you need, the time you need and a team that respects both."
+        testid="buyer-first-image-band"
+      />
 
       <ProcessTimeline />
       <CtaBand />

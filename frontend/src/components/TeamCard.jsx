@@ -6,7 +6,7 @@ export default function TeamCard({ member, index = 0 }) {
       data-testid={`team-card-${member.name.toLowerCase().replace(/\s+/g, "-")}`}
       className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-navy/10 bg-white p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-card"
     >
-      <div className="navy-panel relative mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full">
+      <div className="navy-panel relative mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full transition-transform duration-500 group-hover:scale-105 group-hover:rotate-3">
         <span className="font-display text-2xl font-bold tracking-wide text-gold">
           {initials(member.name)}
         </span>
