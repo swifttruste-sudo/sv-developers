@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ChatWidget from "@/components/chat/ChatWidget";
+import BackToTop from "@/components/layout/BackToTop";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
@@ -61,6 +62,7 @@ function SiteChrome({ children }) {
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <BackToTop />
       <ChatWidget />
     </div>
   );

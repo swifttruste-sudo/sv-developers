@@ -13,7 +13,7 @@ export const FAQS = [
   },
   {
     q: "Are all projects approved?",
-    a: "We never label a project approved until its latest applicable official records have been verified. Where supplied material mentions approvals such as HMDA or RERA, we reconfirm against current records before displaying any approval badge. Ask us directly and we will share the current documentation status of any project, honestly.",
+    a: "Shankarpally Villa Plots is HMDA and RERA approved, as confirmed by the company. For every other project we show the current status transparently and never label a project approved until its latest applicable official records have been verified. Ask us directly and we will share the current documentation status of any project, honestly.",
   },
   {
     q: "How can I verify property documentation?",

@@ -14,7 +14,7 @@ export const PROJECTS = [
     location: "Maithabkhanguda, Shankarpally",
     type: "villa-plots",
     typeLabel: "Residential Villa Plots",
-    status: { label: "Enquiries Open", tone: "gold" },
+    status: { label: "HMDA & RERA Approved", tone: "gold" },
     image:
       "https://images.unsplash.com/photo-1706164971302-e30c0640cc3b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjBsdXh1cnklMjB2aWxsYSUyMGV4dGVyaW9yJTIwYXJjaGl0ZWN0dXJlJTIwZHVza3xlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     gallery: [
@@ -22,12 +22,13 @@ export const PROJECTS = [
       "https://images.unsplash.com/photo-1593714604578-d9e41b00c6c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBjbHViSG91c2UlMjBzd2ltbWluZyUyMHBvb2wlMjByZXNvcnQlMjBldmVuaW5nfGVufDB8fHwxNzkxODA2MDQ4fDA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400",
     ],
     shortDescription:
-      "A residential villa-plot community with gated-community features, landscaped spaces and lifestyle amenities.",
+      "An HMDA & RERA approved residential villa-plot community with gated-community features, landscaped spaces and lifestyle amenities.",
     description: [
       "Explore a residential villa-plot community presented with gated-community features, landscaped spaces and lifestyle amenities. The project is positioned in the Shankarpally growth corridor, an area our team tracks closely for connectivity, infrastructure and surrounding development.",
       "Discover the available plot configurations, project location, pricing and current documentation. Our team walks you through the master plan, the character of the surrounding neighbourhood and the practical details that matter before you commit to a site visit.",
     ],
     highlights: [
+      "HMDA & RERA approved",
       "Stated project area: 15+ acres",
       "Plot sizes: 180–300 square yards",
       "Clubhouse",
@@ -42,12 +43,12 @@ export const PROJECTS = [
       { label: "Location", value: "Maithabkhanguda, Shankarpally" },
       { label: "Project Area", value: "15+ acres (as stated by the company)" },
       { label: "Plot Sizes", value: "180–300 square yards (as stated)" },
+      { label: "Approvals", value: "HMDA & RERA approved (as confirmed by the company)" },
       { label: "Price", value: "On request — current pricing being reconfirmed" },
-      { label: "Approvals", value: "Details being reconfirmed against latest official records" },
       { label: "Possession", value: "To be confirmed on enquiry" },
     ],
     transparencyNote:
-      "Supplied material describes HMDA and RERA approvals. We display an approval badge only after the latest applicable official records have been verified — ask us for the current documentation status.",
+      "HMDA and RERA approvals are confirmed for this project as per the company's records. Copies are shared on request, and we encourage every buyer to independently verify the latest documents before purchase.",
     priceNote:
       "A previous introductory price of ₹22,999 per square yard is not published here until the current price is reconfirmed.",
     developer: "Details available on enquiry",

@@ -77,6 +77,28 @@
         @apply inline-flex items-center justify-center gap-2.5 rounded-md bg-gold px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-midnight transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ffbe2e] hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold;
     }
 
+    .btn-gold {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-gold::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -140%;
+        width: 55%;
+        height: 100%;
+        background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+        transform: skewX(-20deg);
+        transition: left 0.65s ease;
+        pointer-events: none;
+    }
+
+    .btn-gold:hover::after {
+        left: 180%;
+    }
+
     .btn-navy {
         @apply inline-flex items-center justify-center gap-2.5 rounded-md bg-navy px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy-deep hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy;
     }

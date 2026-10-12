@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SITE } from "@/data/site";
@@ -13,20 +13,25 @@ const rise = (delay) => ({
 });
 
 export default function Hero() {
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 900], [0, 180]);
+  const contentFade = useTransform(scrollY, [0, 480], [1, 0]);
+
   return (
     <section data-testid="hero-section" className="relative flex min-h-[92vh] items-center overflow-hidden bg-midnight">
       <motion.img
         src={HERO_IMG}
         alt="Aerial view of a landscaped residential community — representative image"
-        initial={{ scale: 1.12 }}
+        initial={{ scale: 1.14 }}
         animate={{ scale: 1 }}
         transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute inset-0 h-full w-full object-cover"
+        style={{ y: bgY }}
+        className="absolute left-0 top-[-10%] h-[120%] w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-midnight/95 via-navy/75 to-navy/35" />
       <div className="absolute inset-0 bg-gradient-to-t from-midnight/80 via-transparent to-midnight/40" />
 
-      <div className="container-x relative z-10 pb-24 pt-36 sm:pt-40">
+      <motion.div style={{ opacity: contentFade }} className="container-x relative z-10 pb-24 pt-36 sm:pt-40">
         <div className="max-w-3xl">
           <motion.p {...rise(0.15)} className="eyebrow !text-gold">
             Real Estate Development | Hyderabad, India
@@ -41,7 +46,12 @@ export default function Hero() {
             A Future Built With{" "}
             <span className="relative inline-block text-gold">
               Confidence.
-              <span className="absolute -bottom-1 left-0 h-[3px] w-full bg-gold/50" />
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute -bottom-1 left-0 h-[3px] w-full origin-left bg-gold/50"
+              />
             </span>
           </motion.h1>
 
@@ -62,13 +72,18 @@ export default function Hero() {
           </motion.div>
 
           <motion.div {...rise(0.75)} className="mt-14 flex items-center gap-4">
-            <span className="h-px w-12 bg-gold" />
+            <motion.span
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="h-px w-12 origin-left bg-gold"
+            />
             <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-gold sm:text-xs">
               55 Years of Combined Core-Team Experience
             </p>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       <motion.a
         href={SITE.phoneHref}

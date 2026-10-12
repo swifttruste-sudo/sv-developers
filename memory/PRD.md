@@ -31,6 +31,10 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 - AI chatbot site-wide (hidden on /admin): floating gold launcher, streaming SSE via /api/chat (emergentintegrations, OpenAI gpt-5.4, EMERGENT_LLM_KEY), MongoDB-persisted history, strict system prompt using only verified project facts.
 - Verified: admin login → inbox → reply (status flips to Replied), chat streaming on desktop + mobile, official logo on desktop + mobile header, no overflow, no console errors.
 
+## Implemented (2026-10-12, round 3)
+- Shankarpally Villa Plots published as HMDA & RERA approved (as confirmed by the company): status chip on cards + detail page, approvals spec row, highlights, transparency note reworded, FAQ updated, chatbot states it (verified via live chat stream).
+- Motion pass: hero parallax (bg drift + content fade + animated gold underline/rule), page-enter transitions, count-up "55" stat, buyer-first band parallax, gold button shine sweep, back-to-top button, directional reveal support. Mobile overflow fixed (slide-in offset) — verified 390px clean.
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.

@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Quote } from "lucide-react";
 import { Reveal } from "@/components/common/Reveal";
@@ -6,13 +8,18 @@ const BAND_IMG =
   "https://images.unsplash.com/photo-1762811054947-605b20298615?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBsdXh1cnklMjB2aWxsYSUyMGV4dGVyaW9yJTIwYXJjaGl0ZWN0dXJlJTIwZHVza3xlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1800";
 
 export default function BuyerFirstBand() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+
   return (
-    <section data-testid="buyer-first-band" className="relative overflow-hidden py-24 lg:py-32">
-      <img
+    <section ref={ref} data-testid="buyer-first-band" className="relative overflow-hidden py-24 lg:py-32">
+      <motion.img
         src={BAND_IMG}
         alt="Illuminated residence at dusk — representative image"
         loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover"
+        style={{ y: bgY }}
+        className="absolute left-0 top-[-10%] h-[120%] w-full object-cover"
       />
       <div className="absolute inset-0 bg-midnight/85" />
       <div className="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/70 to-navy/50" />

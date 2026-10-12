@@ -1,10 +1,34 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { animate, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import { Reveal } from "@/components/common/Reveal";
 
 const ABOUT_IMG =
   "https://images.unsplash.com/photo-1721815693498-cc28507c0ba2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBsdXh1cnklMjB2aWxsYSUyMGV4dGVyaW9yJTIwYXJjaGl0ZWN0dXJlJTIwZHVza3xlbnwwfHx8fDE3OTE4MDYwNDh8MA&ixlib=rb-4.1.0&q=85&auto=format&fit=crop&w=1400";
+
+function CountUp({ to }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.6 });
+  const [val, setVal] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, to, {
+      duration: 1.8,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (v) => setVal(Math.round(v)),
+    });
+    return () => controls.stop();
+  }, [inView, to]);
+
+  return (
+    <span ref={ref} data-testid="stat-count-up">
+      {val}
+    </span>
+  );
+}
 
 export default function BrandAbout() {
   return (
@@ -54,7 +78,9 @@ export default function BrandAbout() {
             className="relative aspect-[4/3.4] w-full rounded-xl object-cover shadow-lift"
           />
           <div className="navy-panel absolute -bottom-8 left-6 rounded-xl px-7 py-6 shadow-lift sm:left-10">
-            <p className="font-display text-3xl font-bold text-gold">55</p>
+            <p className="font-display text-3xl font-bold text-gold">
+              <CountUp to={55} />
+            </p>
             <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80">
               Years Combined
               <br />
