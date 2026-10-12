@@ -38,6 +38,12 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 ## Handoff
 - GitHub: entire codebase pushed to https://github.com/swifttruste-sudo/sv-developers (branch main, HEAD 5c30297). Secrets excluded via .gitignore (backend/.env, frontend/.env never committed); .env.example templates included for local setup.
 
+## Implemented (2026-10-12, round 4)
+- More imagery: curtain-reveal galleries on all 5 project detail pages (2-4 images each), 3-image collage on About, parallax image bands on Team / Why Choose Us / Buyer-First, interior visual on Contact — all labelled "representative visuals, not actual site photographs".
+- More animation: ImageReveal (clip-path curtain + scale, IO-safe variant pattern), GalleryGrid staggered rhythm, parallax ImageBand component, team monogram hover tilt.
+- Fixed: ImageReveal deadlock (own clip-path zeroed the IntersectionObserver area — moved clip to child variant under an unclipped observed wrapper).
+- Pushed to GitHub main (7f8eb82).
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
