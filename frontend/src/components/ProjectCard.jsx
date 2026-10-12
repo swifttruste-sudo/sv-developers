@@ -27,6 +27,7 @@ export default function ProjectCard({ project, index = 0 }) {
           loading={index < 3 ? "eager" : "lazy"}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
         />
+        <div className="absolute inset-0 bg-navy/25 transition-opacity duration-500 group-hover:opacity-0" />
         <div className="absolute inset-0 bg-gradient-to-t from-midnight/55 via-transparent to-transparent" />
         <div className="absolute left-4 top-4">
           <StatusChip label={project.status.label} tone="light" />

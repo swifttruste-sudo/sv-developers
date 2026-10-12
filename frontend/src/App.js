@@ -1,6 +1,7 @@
 import { Component, useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ChatWidget from "@/components/chat/ChatWidget";
@@ -21,7 +22,8 @@ import Admin from "@/pages/Admin";
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    if (window.__lenis) window.__lenis.scrollTo(0, { immediate: true });
+    else window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
   return null;
 }
@@ -73,6 +75,7 @@ export default function App() {
     <div className="App min-h-screen bg-white">
       <ErrorBoundary>
         <BrowserRouter>
+          <SmoothScroll />
           <ScrollToTop />
           <Routes>
             <Route path="/admin" element={<Admin />} />

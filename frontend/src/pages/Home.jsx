@@ -1,6 +1,7 @@
 import PageMeta from "@/components/common/PageMeta";
 import { FadePage } from "@/components/common/Reveal";
 import Hero from "@/components/home/Hero";
+import Marquee from "@/components/home/Marquee";
 import TrustStrip from "@/components/home/TrustStrip";
 import BrandAbout from "@/components/home/BrandAbout";
 import ProjectDiscovery from "@/components/home/ProjectDiscovery";
@@ -19,6 +20,7 @@ export default function Home() {
         description="Residential plots, premium villas and property opportunities around Hyderabad, presented with a buyer-first approach by a core team with 55 years of combined experience."
       />
       <Hero />
+      <Marquee />
       <TrustStrip />
       <BrandAbout />
       <ProjectDiscovery />

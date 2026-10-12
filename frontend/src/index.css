@@ -36,8 +36,29 @@
     }
 
     html {
-        scroll-behavior: smooth;
         scroll-padding-top: 96px;
+    }
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marquee 42s linear infinite;
+    }
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .marquee-track:hover {
+        animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .marquee-track {
+            animation: none;
+        }
     }
 
     body {

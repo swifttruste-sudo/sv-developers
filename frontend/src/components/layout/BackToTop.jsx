@@ -12,6 +12,11 @@ export default function BackToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const toTop = () => {
+    if (window.__lenis) window.__lenis.scrollTo(0);
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <AnimatePresence>
       {show && (
@@ -25,7 +30,7 @@ export default function BackToTop() {
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.94 }}
           transition={{ duration: 0.25 }}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onClick={toTop}
           className="fixed bottom-6 left-4 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy/15 bg-white text-navy shadow-card transition-colors duration-300 hover:border-gold hover:bg-gold hover:text-midnight sm:left-6"
         >
           <ArrowUp size={18} />

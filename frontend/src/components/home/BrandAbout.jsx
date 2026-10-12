@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { animate, useInView } from "framer-motion";
+import { animate, motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import SectionHeading from "@/components/common/SectionHeading";
 import { Reveal } from "@/components/common/Reveal";
 
@@ -27,6 +27,37 @@ function CountUp({ to }) {
     <span ref={ref} data-testid="stat-count-up">
       {val}
     </span>
+  );
+}
+
+function TiltBadge({ children }) {
+  const rx = useMotionValue(0);
+  const ry = useMotionValue(0);
+  const srx = useSpring(rx, { stiffness: 150, damping: 18 });
+  const sry = useSpring(ry, { stiffness: 150, damping: 18 });
+
+  const onMove = (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    ry.set(((e.clientX - r.left) / r.width - 0.5) * 14);
+    rx.set(-((e.clientY - r.top) / r.height - 0.5) * 14);
+  };
+  const onLeave = () => {
+    rx.set(0);
+    ry.set(0);
+  };
+
+  return (
+    <div style={{ perspective: 600 }} className="absolute -bottom-8 left-6 sm:left-10">
+      <motion.div
+        onMouseMove={onMove}
+        onMouseLeave={onLeave}
+        style={{ rotateX: srx, rotateY: sry, transformStyle: "preserve-3d" }}
+        data-testid="stat-55-badge"
+        className="navy-panel rounded-xl px-7 py-6 shadow-lift"
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 }
 
@@ -77,7 +108,7 @@ export default function BrandAbout() {
             loading="lazy"
             className="relative aspect-[4/3.4] w-full rounded-xl object-cover shadow-lift"
           />
-          <div className="navy-panel absolute -bottom-8 left-6 rounded-xl px-7 py-6 shadow-lift sm:left-10">
+          <TiltBadge>
             <p className="font-display text-3xl font-bold text-gold">
               <CountUp to={55} />
             </p>
@@ -86,7 +117,7 @@ export default function BrandAbout() {
               <br />
               Core-Team Experience
             </p>
-          </div>
+          </TiltBadge>
         </Reveal>
       </div>
     </section>
