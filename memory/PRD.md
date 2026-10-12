@@ -52,6 +52,11 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 ## Implemented (2026-10-12, round 6)
 - Exhaustive responsive sweep: all 14 routes + mobile drawer open + chat open + admin login at 360px, admin dashboard + reply flow at 390px — zero horizontal overflow in every state. Verified widths now: 360 / 390 / 768 / 1440 / 1920. No code changes required this round.
 
+## Implemented (2026-10-12, round 7)
+- Premium hover layer: cursor-following gold spotlight on project/why/commitment cards, magnetic CTAs (hero + header + CTA band), custom gold dot+ring cursor (fine-pointer devices only), gold scroll-progress bar, nav hover underline sweep, footer link sweeps, button icon nudges.
+- Fixed duplicate headline on /projects (now "Every Opportunity, Presented Honestly.").
+- Verified hover states via mouse-move captures; mobile unaffected (cursor/spotlight are pointer-fine only). Pushed to GitHub main (15ad0cf).
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
