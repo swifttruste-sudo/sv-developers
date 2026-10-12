@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, MessageCircle } from "lucide-react";
+import { ArrowRight, GitCompare, MapPin, MessageCircle } from "lucide-react";
 import StatusChip from "@/components/common/StatusChip";
 import { handleSpotlight } from "@/components/common/spotlight";
+import { useCompare } from "@/context/CompareContext";
 import { waLink } from "@/data/site";
 
 export default function ProjectCard({ project, index = 0 }) {
+  const { ids, toggle } = useCompare();
+  const inCompare = ids.includes(project.slug);
+
   return (
     <motion.article
       layout
@@ -60,7 +64,7 @@ export default function ProjectCard({ project, index = 0 }) {
           ))}
         </ul>
 
-        <div className="mt-auto flex items-center gap-3 pt-6">
+        <div className="mt-auto flex items-center gap-2.5 pt-6">
           <Link
             to={`/projects/${project.slug}`}
             data-testid={`project-details-btn-${project.slug}`}
@@ -68,6 +72,21 @@ export default function ProjectCard({ project, index = 0 }) {
           >
             View Project <ArrowRight size={14} />
           </Link>
+          <button
+            type="button"
+            onClick={() => toggle(project.slug)}
+            data-testid={`project-compare-btn-${project.slug}`}
+            aria-pressed={inCompare}
+            aria-label={inCompare ? `Remove ${project.name} from compare` : `Add ${project.name} to compare`}
+            title={inCompare ? "Remove from compare" : "Add to compare"}
+            className={`inline-flex h-10 w-10 items-center justify-center rounded-md border transition-all duration-300 ${
+              inCompare
+                ? "border-gold bg-gold text-midnight"
+                : "border-navy/15 text-navy hover:border-gold hover:bg-gold hover:text-midnight"
+            }`}
+          >
+            <GitCompare size={16} />
+          </button>
           <a
             href={waLink(project.enquiryMessage)}
             target="_blank"

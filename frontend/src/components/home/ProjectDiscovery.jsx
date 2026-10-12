@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, GitCompare } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/common/SectionHeading";
+import LocationFilter from "@/components/common/LocationFilter";
 import { Reveal } from "@/components/common/Reveal";
 import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS, PROJECT_TYPES, UPCOMING_LOCATIONS } from "@/data/projects";
 
 export default function ProjectDiscovery() {
   const [filter, setFilter] = useState("all");
-  const visible = PROJECTS.filter((p) => filter === "all" || p.type === filter);
+  const [loc, setLoc] = useState("all");
+  const visible = PROJECTS.filter(
+    (p) => (filter === "all" || p.type === filter) && (loc === "all" || p.locationArea === loc)
+  );
 
   return (
     <section data-testid="project-discovery-section" className="bg-gradient-to-b from-white to-ice py-20 lg:py-28">
@@ -21,31 +25,34 @@ export default function ProjectDiscovery() {
         />
 
         <Reveal delay={0.1}>
-          <div
-            role="tablist"
-            aria-label="Filter projects by type"
-            data-testid="project-filter-bar"
-            className="mt-10 flex flex-wrap gap-2.5"
-          >
-            {PROJECT_TYPES.map((t) => {
-              const active = filter === t.id;
-              return (
-                <button
-                  key={t.id}
-                  role="tab"
-                  aria-selected={active}
-                  data-testid={`project-filter-${t.id}`}
-                  onClick={() => setFilter(t.id)}
-                  className={`rounded-full border px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.14em] transition-all duration-300 ${
-                    active
-                      ? "border-navy bg-navy text-white shadow-card"
-                      : "border-navy/20 bg-white text-steel hover:border-gold hover:text-navy"
-                  }`}
-                >
-                  {t.label}
-                </button>
-              );
-            })}
+          <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-center">
+            <div
+              role="tablist"
+              aria-label="Filter projects by type"
+              data-testid="project-filter-bar"
+              className="flex flex-wrap gap-2.5"
+            >
+              {PROJECT_TYPES.map((t) => {
+                const active = filter === t.id;
+                return (
+                  <button
+                    key={t.id}
+                    role="tab"
+                    aria-selected={active}
+                    data-testid={`project-filter-${t.id}`}
+                    onClick={() => setFilter(t.id)}
+                    className={`rounded-full border px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.14em] transition-all duration-300 ${
+                      active
+                        ? "border-navy bg-navy text-white shadow-card"
+                        : "border-navy/20 bg-white text-steel hover:border-gold hover:text-navy"
+                    }`}
+                  >
+                    {t.label}
+                  </button>
+                );
+              })}
+            </div>
+            <LocationFilter value={loc} onChange={setLoc} testid="home-location-filter" />
           </div>
         </Reveal>
 
@@ -57,15 +64,31 @@ export default function ProjectDiscovery() {
           </AnimatePresence>
         </motion.div>
 
+        {visible.length === 0 && (
+          <p className="mt-10 rounded-xl border border-dashed border-navy/25 bg-white p-8 text-center text-sm text-steel" data-testid="home-discovery-empty">
+            Nothing in this combination yet — new opportunities are added as they are verified.
+          </p>
+        )}
+
         <Reveal delay={0.1}>
-          <Link
-            to="/projects"
-            data-testid="project-discovery-all-link"
-            className="group mt-12 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-navy transition-colors hover:text-gold"
-          >
-            View All Projects
-            <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1.5" />
-          </Link>
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+            <Link
+              to="/projects"
+              data-testid="project-discovery-all-link"
+              className="group inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-navy transition-colors hover:text-gold"
+            >
+              View All Projects
+              <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+            </Link>
+            <Link
+              to="/compare"
+              data-testid="project-discovery-compare-link"
+              className="group inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-navy transition-colors hover:text-gold"
+            >
+              <GitCompare size={15} className="text-gold" />
+              Compare projects side by side
+            </Link>
+          </div>
           <p className="mt-6 max-w-2xl text-[13px] leading-6 text-steel">
             Further verified opportunities in {UPCOMING_LOCATIONS.join(" and ")} are
             being added to our portfolio —{" "}

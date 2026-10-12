@@ -5,6 +5,7 @@ import {
   CalendarCheck,
   Check,
   FileWarning,
+  GitCompare,
   MapPin,
   MessageCircle,
   Phone,
@@ -14,6 +15,7 @@ import PageMeta from "@/components/common/PageMeta";
 import StatusChip from "@/components/common/StatusChip";
 import GalleryGrid from "@/components/common/GalleryGrid";
 import { Reveal, FadePage } from "@/components/common/Reveal";
+import { useCompare } from "@/context/CompareContext";
 import ProjectCard from "@/components/ProjectCard";
 import CtaBand from "@/components/home/CtaBand";
 import { getProject, PROJECTS } from "@/data/projects";
@@ -23,8 +25,10 @@ import NotFound from "@/pages/NotFound";
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = getProject(slug);
+  const { ids, toggle } = useCompare();
   if (!project) return <NotFound />;
 
+  const inCompare = ids.includes(project.slug);
   const related = PROJECTS.filter((p) => p.slug !== project.slug).slice(0, 3);
 
   return (
@@ -171,6 +175,19 @@ export default function ProjectDetail() {
                       <Link to="/contact" data-testid="project-detail-visit-btn" className="btn-ghost-light w-full">
                         <CalendarCheck size={15} /> Book a Site Visit
                       </Link>
+                      <button
+                        type="button"
+                        onClick={() => toggle(project.slug)}
+                        data-testid="project-detail-compare-btn"
+                        aria-pressed={inCompare}
+                        className={`inline-flex w-full items-center justify-center gap-2 rounded-md border px-7 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] transition-all duration-300 ${
+                          inCompare
+                            ? "border-gold bg-gold/15 text-gold"
+                            : "border-white/35 text-white hover:border-gold hover:text-gold"
+                        }`}
+                      >
+                        <GitCompare size={15} /> {inCompare ? "In Compare ✓" : "Add to Compare"}
+                      </button>
                       <a
                         href={SITE.phoneHref}
                         data-testid="project-detail-call-btn"

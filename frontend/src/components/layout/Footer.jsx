@@ -56,6 +56,15 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                to="/compare"
+                className="link-sweep text-sm font-semibold text-gold transition-colors hover:text-white"
+                data-testid="footer-compare-link"
+              >
+                Compare Projects
+              </Link>
+            </li>
           </ul>
         </div>
 

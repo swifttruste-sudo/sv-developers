@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import ScrollProgress from "@/components/layout/ScrollProgress";
 import CustomCursor from "@/components/common/CustomCursor";
+import { CompareProvider } from "@/context/CompareContext";
+import CompareTray from "@/components/CompareTray";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ChatWidget from "@/components/chat/ChatWidget";
@@ -12,6 +14,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
 import ProjectDetail from "@/pages/ProjectDetail";
+import Compare from "@/pages/Compare";
 import Team from "@/pages/Team";
 import WhyChooseUs from "@/pages/WhyChooseUs";
 import BuyerFirst from "@/pages/BuyerFirst";
@@ -68,6 +71,7 @@ function SiteChrome({ children }) {
       <Footer />
       <BackToTop />
       <ChatWidget />
+      <CompareTray />
     </div>
   );
 }
@@ -77,33 +81,36 @@ export default function App() {
     <div className="App min-h-screen bg-white">
       <ErrorBoundary>
         <BrowserRouter>
-          <SmoothScroll />
-          <ScrollProgress />
-          <CustomCursor />
-          <ScrollToTop />
-          <Routes>
-            <Route path="/admin" element={<Admin />} />
-            <Route
-              path="*"
-              element={
-                <SiteChrome>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/projects/:slug" element={<ProjectDetail />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/why-choose-us" element={<WhyChooseUs />} />
-                    <Route path="/buyer-first" element={<BuyerFirst />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                    <Route path="/disclaimer" element={<Disclaimer />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </SiteChrome>
-              }
-            />
-          </Routes>
+          <CompareProvider>
+            <SmoothScroll />
+            <ScrollProgress />
+            <CustomCursor />
+            <ScrollToTop />
+            <Routes>
+              <Route path="/admin" element={<Admin />} />
+              <Route
+                path="*"
+                element={
+                  <SiteChrome>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/projects" element={<Projects />} />
+                      <Route path="/projects/:slug" element={<ProjectDetail />} />
+                      <Route path="/compare" element={<Compare />} />
+                      <Route path="/team" element={<Team />} />
+                      <Route path="/why-choose-us" element={<WhyChooseUs />} />
+                      <Route path="/buyer-first" element={<BuyerFirst />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                      <Route path="/disclaimer" element={<Disclaimer />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </SiteChrome>
+                }
+              />
+            </Routes>
+          </CompareProvider>
         </BrowserRouter>
       </ErrorBoundary>
     </div>

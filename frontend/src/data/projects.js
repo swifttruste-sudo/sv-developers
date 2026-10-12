@@ -6,12 +6,21 @@ export const PROJECT_TYPES = [
   { id: "apartments", label: "Apartments" },
 ];
 
+export const LOCATION_AREAS = [
+  { id: "all", label: "All Locations" },
+  { id: "shankarpally", label: "Shankarpally" },
+  { id: "tellapur-kollur", label: "Tellapur – Kollur" },
+  { id: "tbc", label: "Location to Be Confirmed" },
+];
+
 export const PROJECTS = [
   {
     slug: "shankarpally-villa-plots",
     name: "Shankarpally Villa Plots",
     tagline: "Where Luxury Meets Location.",
     location: "Maithabkhanguda, Shankarpally",
+    locationArea: "shankarpally",
+    bestFor: "Approved documentation",
     type: "villa-plots",
     typeLabel: "Residential Villa Plots",
     status: { label: "HMDA & RERA Approved", tone: "gold" },
@@ -63,6 +72,8 @@ export const PROJECTS = [
     name: "Pearl County",
     tagline: "Space. Lifestyle. Location.",
     location: "Tellapur @ Kollur (exact location to be confirmed)",
+    locationArea: "tellapur-kollur",
+    bestFor: "Spacious triplex villas",
     type: "villas",
     typeLabel: "Triplex Villas",
     status: { label: "Enquiries Open", tone: "gold" },
@@ -113,6 +124,8 @@ export const PROJECTS = [
     name: "BBG Project Opportunities",
     tagline: "Residential Opportunities via Our Enquiry Service.",
     location: "To be confirmed on enquiry",
+    locationArea: "tbc",
+    bestFor: "Flexible exploration",
     type: "other",
     typeLabel: "Residential Opportunities",
     status: { label: "Enquiry Service", tone: "outline" },
@@ -155,6 +168,8 @@ export const PROJECTS = [
     name: "Vertical Forest",
     tagline: "Elevated Living. Greener Spaces.",
     location: "Hyderabad (exact location to be confirmed)",
+    locationArea: "tbc",
+    bestFor: "Green-living concept",
     type: "apartments",
     typeLabel: "Proposed Residences",
     status: { label: "Concept Presentation", tone: "navy" },
@@ -201,6 +216,8 @@ export const PROJECTS = [
     name: "Silpa RRR County",
     tagline: "Planned Community Living. Room for Your Future.",
     location: "To be confirmed",
+    locationArea: "tbc",
+    bestFor: "SV-developed community",
     type: "plotted-communities",
     typeLabel: "Plotted Development",
     status: { label: "Enquiries Open", tone: "gold" },

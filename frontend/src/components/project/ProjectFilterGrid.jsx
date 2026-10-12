@@ -1,26 +1,57 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
+import { Search } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
+import LocationFilter from "@/components/common/LocationFilter";
 import { Reveal } from "@/components/common/Reveal";
 import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS, PROJECT_TYPES, UPCOMING_LOCATIONS } from "@/data/projects";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, GitCompare } from "lucide-react";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
-  const visible = PROJECTS.filter((p) => filter === "all" || p.type === filter);
+  const [loc, setLoc] = useState("all");
+  const [query, setQuery] = useState("");
+
+  const visible = PROJECTS.filter(
+    (p) =>
+      (filter === "all" || p.type === filter) &&
+      (loc === "all" || p.locationArea === loc) &&
+      (!query.trim() ||
+        `${p.name} ${p.location} ${p.typeLabel} ${p.shortDescription}`
+          .toLowerCase()
+          .includes(query.trim().toLowerCase()))
+  );
 
   return (
     <>
       <SectionHeading
         eyebrow="All Projects"
         title="Every Opportunity, Presented Honestly."
-        description="Every listing states its current status honestly — including what is verified, what is stated by the company, and what is still being reconfirmed."
+        description="Filter by type and location — or search — and compare up to three projects side by side. Every listing states its current status honestly."
       />
 
       <Reveal delay={0.1}>
-        <div role="tablist" aria-label="Filter projects by type" data-testid="projects-filter-bar" className="mt-10 flex flex-wrap gap-2.5">
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="relative flex-1">
+            <Search size={16} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gold" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              data-testid="projects-search-input"
+              placeholder="Search by name, location or type…"
+              aria-label="Search projects"
+              className="field-input !pl-11"
+            />
+          </div>
+          <LocationFilter value={loc} onChange={setLoc} testid="projects-location-filter" />
+        </div>
+      </Reveal>
+
+      <Reveal delay={0.15}>
+        <div role="tablist" aria-label="Filter projects by type" data-testid="projects-filter-bar" className="mt-4 flex flex-wrap gap-2.5">
           {PROJECT_TYPES.map((t) => {
             const active = filter === t.id;
             return (
@@ -43,7 +74,11 @@ export default function Projects() {
         </div>
       </Reveal>
 
-      <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3" data-testid="projects-grid">
+      <p className="mt-6 text-[12px] font-semibold uppercase tracking-[0.14em] text-steel" data-testid="projects-results-count">
+        Showing {visible.length} of {PROJECTS.length} projects
+      </p>
+
+      <div className="mt-6 grid gap-7 sm:grid-cols-2 lg:grid-cols-3" data-testid="projects-grid">
         <AnimatePresence mode="popLayout">
           {visible.map((project, i) => (
             <ProjectCard key={project.slug} project={project} index={i} />
@@ -51,14 +86,27 @@ export default function Projects() {
         </AnimatePresence>
       </div>
 
-      {filter !== "all" && visible.length === 0 && (
-        <p className="mt-10 rounded-xl border border-dashed border-navy/25 bg-white p-8 text-center text-sm text-steel">
-          No projects in this category right now — new opportunities are added as they are verified.
+      {visible.length === 0 && (
+        <p className="mt-10 rounded-xl border border-dashed border-navy/25 bg-white p-8 text-center text-sm text-steel" data-testid="projects-empty-state">
+          No projects match those filters yet — try a different location or
+          clear the search. New opportunities are added as they are verified.
         </p>
       )}
 
       <Reveal delay={0.1}>
-        <div className="mt-14 flex flex-col items-start justify-between gap-6 rounded-xl border border-gold/40 bg-gold-light/50 p-8 sm:flex-row sm:items-center">
+        <Link
+          to="/compare"
+          data-testid="projects-compare-link"
+          className="mt-10 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.16em] text-navy transition-colors hover:text-gold"
+        >
+          <GitCompare size={15} className="text-gold" />
+          Can't decide? Compare projects side by side
+          <ArrowRight size={14} />
+        </Link>
+      </Reveal>
+
+      <Reveal delay={0.1}>
+        <div className="mt-8 flex flex-col items-start justify-between gap-6 rounded-xl border border-gold/40 bg-gold-light/50 p-8 sm:flex-row sm:items-center">
           <div>
             <h3 className="font-display text-lg font-bold text-navy">
               More locations on the way — {UPCOMING_LOCATIONS.join(" and ")}
