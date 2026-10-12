@@ -25,6 +25,12 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 - Backend /api/enquiries live-verified (POST 201 + GET).
 - Verified: desktop 1440 + mobile 390 screenshots (no overflow), mobile drawer escape, form submit success, project detail page.
 
+## Implemented (2026-10-12, round 2)
+- Official uploaded logo live site-wide (public/sv-logo.jpg, whitespace-trimmed; LOGO_URL in data/site.js). Footer shows it on a white card on midnight navy.
+- Admin panel at /admin (noindex): JWT httpOnly-cookie login (bcrypt hash seeded from ADMIN_PASSWORD, 5-attempt/15-min brute-force lockout), Enquiries Inbox with New/Replied status, reply saved to Mongo + "Send via WhatsApp" deep link to the enquirer's number.
+- AI chatbot site-wide (hidden on /admin): floating gold launcher, streaming SSE via /api/chat (emergentintegrations, OpenAI gpt-5.4, EMERGENT_LLM_KEY), MongoDB-persisted history, strict system prompt using only verified project facts.
+- Verified: admin login → inbox → reply (status flips to Replied), chat streaming on desktop + mobile, official logo on desktop + mobile header, no overflow, no console errors.
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.

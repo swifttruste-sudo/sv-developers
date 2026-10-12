@@ -3,6 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ChatWidget from "@/components/chat/ChatWidget";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
@@ -14,6 +15,7 @@ import Contact from "@/pages/Contact";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import Disclaimer from "@/pages/Disclaimer";
 import NotFound from "@/pages/NotFound";
+import Admin from "@/pages/Admin";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -53,31 +55,46 @@ class ErrorBoundary extends Component {
   }
 }
 
+function SiteChrome({ children }) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">{children}</main>
+      <Footer />
+      <ChatWidget />
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <div className="App min-h-screen bg-white">
       <ErrorBoundary>
         <BrowserRouter>
           <ScrollToTop />
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/projects/:slug" element={<ProjectDetail />} />
-                <Route path="/team" element={<Team />} />
-                <Route path="/why-choose-us" element={<WhyChooseUs />} />
-                <Route path="/buyer-first" element={<BuyerFirst />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                <Route path="/disclaimer" element={<Disclaimer />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <Footer />
-          </div>
+          <Routes>
+            <Route path="/admin" element={<Admin />} />
+            <Route
+              path="*"
+              element={
+                <SiteChrome>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/:slug" element={<ProjectDetail />} />
+                    <Route path="/team" element={<Team />} />
+                    <Route path="/why-choose-us" element={<WhyChooseUs />} />
+                    <Route path="/buyer-first" element={<BuyerFirst />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/disclaimer" element={<Disclaimer />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </SiteChrome>
+              }
+            />
+          </Routes>
         </BrowserRouter>
       </ErrorBoundary>
     </div>

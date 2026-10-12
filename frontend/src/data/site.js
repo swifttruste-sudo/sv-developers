@@ -13,7 +13,7 @@ export const SITE = {
 
 // Drop the official logo file into /public (e.g. /public/sv-logo.png) and set
 // this to "/sv-logo.png". Until then a crafted navy-and-gold lockup is shown.
-export const LOGO_URL = null;
+export const LOGO_URL = "/sv-logo.jpg";
 
 export const waLink = (text) =>
   `${SITE.whatsapp}?text=${encodeURIComponent(text)}`;

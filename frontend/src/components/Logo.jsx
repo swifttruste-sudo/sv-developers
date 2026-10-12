@@ -56,7 +56,7 @@ export default function Logo({ dark = false, className = "", imgClassName = "" }
         <img
           src={LOGO_URL}
           alt="SV Developers — Building Your Future"
-          className={`object-contain ${imgClassName || "h-12 w-auto"}`}
+          className={`object-contain ${imgClassName || "h-12 w-auto"} ${dark ? "rounded-md bg-white p-1.5" : ""}`}
         />
       ) : (
         <>
