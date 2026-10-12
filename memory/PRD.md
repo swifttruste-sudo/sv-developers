@@ -44,6 +44,11 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 - Fixed: ImageReveal deadlock (own clip-path zeroed the IntersectionObserver area — moved clip to child variant under an unclipped observed wrapper).
 - Pushed to GitHub main (7f8eb82).
 
+## Implemented (2026-10-12, round 5)
+- Full responsive audit passed at 390 / 768 / 1440 / 1920 px: zero horizontal overflow everywhere, tablet drawer verified (opens, escape-closes), grids collapse correctly.
+- Refinements: project-detail hero image taller on mobile (16/10 → 21/9 on sm+), hero call FAB hidden on small screens (drawer/chat/footer carry contact).
+- Pushed to GitHub main (0e397fe).
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
