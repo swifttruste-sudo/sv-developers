@@ -35,6 +35,9 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 - Shankarpally Villa Plots published as HMDA & RERA approved (as confirmed by the company): status chip on cards + detail page, approvals spec row, highlights, transparency note reworded, FAQ updated, chatbot states it (verified via live chat stream).
 - Motion pass: hero parallax (bg drift + content fade + animated gold underline/rule), page-enter transitions, count-up "55" stat, buyer-first band parallax, gold button shine sweep, back-to-top button, directional reveal support. Mobile overflow fixed (slide-in offset) — verified 390px clean.
 
+## Handoff
+- GitHub: entire codebase pushed to https://github.com/swifttruste-sudo/sv-developers (branch main, HEAD 5c30297). Secrets excluded via .gitignore (backend/.env, frontend/.env never committed); .env.example templates included for local setup.
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
