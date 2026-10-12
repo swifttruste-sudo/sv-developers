@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, GitCompare } from "lucide-react";
+import { ArrowRight, GitCompare, Info } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/common/SectionHeading";
 import LocationFilter from "@/components/common/LocationFilter";
+import BudgetFilter from "@/components/common/BudgetFilter";
 import { Reveal } from "@/components/common/Reveal";
 import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS, PROJECT_TYPES, UPCOMING_LOCATIONS } from "@/data/projects";
@@ -11,8 +12,12 @@ import { PROJECTS, PROJECT_TYPES, UPCOMING_LOCATIONS } from "@/data/projects";
 export default function ProjectDiscovery() {
   const [filter, setFilter] = useState("all");
   const [loc, setLoc] = useState("all");
+  const [budget, setBudget] = useState("all");
   const visible = PROJECTS.filter(
-    (p) => (filter === "all" || p.type === filter) && (loc === "all" || p.locationArea === loc)
+    (p) =>
+      (filter === "all" || p.type === filter) &&
+      (loc === "all" || p.locationArea === loc) &&
+      (budget === "all" || p.budgets.includes(budget))
   );
 
   return (
@@ -25,7 +30,7 @@ export default function ProjectDiscovery() {
         />
 
         <Reveal delay={0.1}>
-          <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-center">
+          <div className="mt-10 flex flex-col gap-3 xl:flex-row xl:items-center">
             <div
               role="tablist"
               aria-label="Filter projects by type"
@@ -52,11 +57,18 @@ export default function ProjectDiscovery() {
                 );
               })}
             </div>
-            <LocationFilter value={loc} onChange={setLoc} testid="home-location-filter" />
+            <div className="flex flex-col gap-3 sm:flex-row xl:ml-auto">
+              <LocationFilter value={loc} onChange={setLoc} testid="home-location-filter" />
+              <BudgetFilter value={budget} onChange={setBudget} testid="home-budget-filter" />
+            </div>
           </div>
+          <p className="mt-3 flex items-start gap-2 text-[12px] leading-5 text-steel">
+            <Info size={14} className="mt-0.5 shrink-0 text-gold" />
+            Budget bands are indicative — exact pricing is shared on request.
+          </p>
         </Reveal>
 
-        <motion.div layout className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3" data-testid="project-grid">
+        <motion.div layout className="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-3" data-testid="project-grid">
           <AnimatePresence mode="popLayout">
             {visible.map((project, i) => (
               <ProjectCard key={project.slug} project={project} index={i} />
@@ -66,7 +78,8 @@ export default function ProjectDiscovery() {
 
         {visible.length === 0 && (
           <p className="mt-10 rounded-xl border border-dashed border-navy/25 bg-white p-8 text-center text-sm text-steel" data-testid="home-discovery-empty">
-            Nothing in this combination yet — new opportunities are added as they are verified.
+            Nothing in this combination yet — try another budget or location. New
+            opportunities are added as they are verified.
           </p>
         )}
 

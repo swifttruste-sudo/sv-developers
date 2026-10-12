@@ -13,6 +13,14 @@ export const LOCATION_AREAS = [
   { id: "tbc", label: "Location to Be Confirmed" },
 ];
 
+export const BUDGET_BANDS = [
+  { id: "all", label: "Any Budget" },
+  { id: "under-50l", label: "Under ₹50 Lakh" },
+  { id: "50l-1cr", label: "₹50 L – ₹1 Cr" },
+  { id: "1cr-2cr", label: "₹1 Cr – ₹2 Cr" },
+  { id: "above-2cr", label: "Above ₹2 Cr" },
+];
+
 export const PROJECTS = [
   {
     slug: "shankarpally-villa-plots",
@@ -21,6 +29,7 @@ export const PROJECTS = [
     location: "Maithabkhanguda, Shankarpally",
     locationArea: "shankarpally",
     bestFor: "Approved documentation",
+    budgets: ["under-50l", "50l-1cr"],
     type: "villa-plots",
     typeLabel: "Residential Villa Plots",
     status: { label: "HMDA & RERA Approved", tone: "gold" },
@@ -74,6 +83,7 @@ export const PROJECTS = [
     location: "Tellapur @ Kollur (exact location to be confirmed)",
     locationArea: "tellapur-kollur",
     bestFor: "Spacious triplex villas",
+    budgets: ["1cr-2cr", "above-2cr"],
     type: "villas",
     typeLabel: "Triplex Villas",
     status: { label: "Enquiries Open", tone: "gold" },
@@ -126,6 +136,7 @@ export const PROJECTS = [
     location: "To be confirmed on enquiry",
     locationArea: "tbc",
     bestFor: "Flexible exploration",
+    budgets: ["under-50l", "50l-1cr", "1cr-2cr", "above-2cr"],
     type: "other",
     typeLabel: "Residential Opportunities",
     status: { label: "Enquiry Service", tone: "outline" },
@@ -170,6 +181,7 @@ export const PROJECTS = [
     location: "Hyderabad (exact location to be confirmed)",
     locationArea: "tbc",
     bestFor: "Green-living concept",
+    budgets: ["1cr-2cr"],
     type: "apartments",
     typeLabel: "Proposed Residences",
     status: { label: "Concept Presentation", tone: "navy" },
@@ -218,6 +230,7 @@ export const PROJECTS = [
     location: "To be confirmed",
     locationArea: "tbc",
     bestFor: "SV-developed community",
+    budgets: ["under-50l", "50l-1cr"],
     type: "plotted-communities",
     typeLabel: "Plotted Development",
     status: { label: "Enquiries Open", tone: "gold" },

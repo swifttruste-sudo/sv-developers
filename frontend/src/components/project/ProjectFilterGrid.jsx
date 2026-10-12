@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search, Info } from "lucide-react";
 import SectionHeading from "@/components/common/SectionHeading";
 import LocationFilter from "@/components/common/LocationFilter";
+import BudgetFilter from "@/components/common/BudgetFilter";
 import { Reveal } from "@/components/common/Reveal";
 import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS, PROJECT_TYPES, UPCOMING_LOCATIONS } from "@/data/projects";
@@ -12,12 +13,14 @@ import { ArrowRight, GitCompare } from "lucide-react";
 export default function Projects() {
   const [filter, setFilter] = useState("all");
   const [loc, setLoc] = useState("all");
+  const [budget, setBudget] = useState("all");
   const [query, setQuery] = useState("");
 
   const visible = PROJECTS.filter(
     (p) =>
       (filter === "all" || p.type === filter) &&
       (loc === "all" || p.locationArea === loc) &&
+      (budget === "all" || p.budgets.includes(budget)) &&
       (!query.trim() ||
         `${p.name} ${p.location} ${p.typeLabel} ${p.shortDescription}`
           .toLowerCase()
@@ -29,7 +32,7 @@ export default function Projects() {
       <SectionHeading
         eyebrow="All Projects"
         title="Every Opportunity, Presented Honestly."
-        description="Filter by type and location — or search — and compare up to three projects side by side. Every listing states its current status honestly."
+        description="Filter by type, location and budget — or search — and compare up to three projects side by side. Every listing states its current status honestly."
       />
 
       <Reveal delay={0.1}>
@@ -47,7 +50,13 @@ export default function Projects() {
             />
           </div>
           <LocationFilter value={loc} onChange={setLoc} testid="projects-location-filter" />
+          <BudgetFilter value={budget} onChange={setBudget} testid="projects-budget-filter" />
         </div>
+        <p className="mt-3 flex items-start gap-2 text-[12px] leading-5 text-steel" data-testid="budget-note">
+          <Info size={14} className="mt-0.5 shrink-0 text-gold" />
+          Budget bands are indicative, to help you shortlist. Exact pricing is
+          shared on request — and reconfirmed in writing.
+        </p>
       </Reveal>
 
       <Reveal delay={0.15}>
@@ -88,8 +97,8 @@ export default function Projects() {
 
       {visible.length === 0 && (
         <p className="mt-10 rounded-xl border border-dashed border-navy/25 bg-white p-8 text-center text-sm text-steel" data-testid="projects-empty-state">
-          No projects match those filters yet — try a different location or
-          clear the search. New opportunities are added as they are verified.
+          No projects match those filters yet — try a different location, budget
+          or clear the search. New opportunities are added as they are verified.
         </p>
       )}
 
