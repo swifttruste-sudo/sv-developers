@@ -65,7 +65,7 @@ export default function ProjectDetail() {
               <img
                 src={project.image}
                 alt={`${project.name} — representative image`}
-                className="aspect-[21/9] w-full object-cover"
+                className="aspect-[16/10] w-full object-cover sm:aspect-[21/9]"
               />
             </div>
           </Reveal>

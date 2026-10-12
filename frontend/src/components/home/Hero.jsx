@@ -103,7 +103,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: 24 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 right-6 z-10 inline-flex items-center gap-2.5 rounded-full border border-white/25 bg-white/10 px-5 py-3 text-[12px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur transition-all duration-300 hover:border-gold hover:text-gold lg:right-10"
+        className="absolute bottom-8 right-6 z-10 hidden items-center gap-2.5 rounded-full border border-white/25 bg-white/10 px-5 py-3 text-[12px] font-bold uppercase tracking-[0.14em] text-white backdrop-blur transition-all duration-300 hover:border-gold hover:text-gold sm:inline-flex lg:right-10"
       >
         <Phone size={15} className="text-gold" />
         <span className="hidden sm:inline">{SITE.phoneDisplay}</span>
