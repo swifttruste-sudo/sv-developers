@@ -69,6 +69,9 @@ Build a complete, production-quality website for SV DEVELOPERS, a Hyderabad-base
 ## Implemented (2026-10-12, round 10)
 - Find by Budget: indicative budget bands (Under ₹50L / ₹50L–₹1Cr / ₹1Cr–₹2Cr / Above ₹2Cr) on Projects + Home, rupee-styled select, combined with type + location + search. Mapping derived from stated facts (plot sizes vs premium villa configs); BBG appears in every band (pricing fully on request). Honesty note: "Budget bands are indicative — exact pricing is shared on request." Chatbot guidance updated. Pushed to GitHub main (34228d0).
 
+## Implemented (2026-10-12, round 11)
+- More animation: masked line-reveal on all section headings (site-wide signature), letter-stagger trust strip values, spring-popped process timeline numbers, gradient-panning button hovers, footer column stagger, chatbot attention pulse. Fixed masked-reveal IntersectionObserver deadlock (observe unclipped wrapper, animate child via variants). Verified all main h2s visible after scroll; pushed to GitHub main (f6f2410).
+
 ## Not Implemented / Placeholders (honest)
 - Official logo: no upload received — crafted navy/gold lockup in use. Drop file in /public + set LOGO_URL in src/data/site.js to swap.
 - Team photos: neutral monogram placeholders per brief.
