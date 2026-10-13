@@ -228,7 +228,7 @@ export default function ChatWidget() {
         className="fixed bottom-6 right-4 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-full bg-gold text-midnight shadow-lift sm:right-6"
       >
         {open ? <X size={24} /> : <MessageCircle size={24} />}
-        {!open && <span className="absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-emerald-500" />}
+        {!open && <span className="chat-pulse absolute -right-0.5 -top-0.5 h-3.5 w-3.5 rounded-full border-2 border-white bg-emerald-500" />}
       </motion.button>
     </>
   );

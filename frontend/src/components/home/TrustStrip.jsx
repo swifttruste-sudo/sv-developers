@@ -1,5 +1,26 @@
+import { motion } from "framer-motion";
 import { TRUST_ITEMS } from "@/data/home";
 import { Reveal } from "@/components/common/Reveal";
+
+function Letters({ text, offset }) {
+  return (
+    <span aria-label={text} className="font-display text-xl font-bold tracking-[0.06em] text-navy sm:text-2xl">
+      {text.split("").map((ch, j) => (
+        <motion.span
+          key={j}
+          aria-hidden
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ delay: offset + j * 0.035, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-block"
+        >
+          {ch === " " ? "\u00A0" : ch}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
 
 export default function TrustStrip() {
   return (
@@ -16,9 +37,7 @@ export default function TrustStrip() {
                 i === 2 ? "max-lg:border-l-0" : ""
               }`}
             >
-              <span className="font-display text-xl font-bold tracking-[0.06em] text-navy sm:text-2xl">
-                {item.value}
-              </span>
+              <Letters text={item.value} offset={i * 0.12} />
               <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-steel">
                 {item.label}
               </span>

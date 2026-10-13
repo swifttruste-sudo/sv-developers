@@ -6,10 +6,11 @@ import { PROJECTS } from "@/data/projects";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const fadeUp = (i) => ({ animationDelay: `${0.1 + i * 0.12}s` });
   return (
     <footer className="bg-[linear-gradient(180deg,#0a2a50_0%,#07182f_55%)] text-white" data-testid="site-footer">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:py-20">
-        <div>
+        <div className="animate-fade-up" style={fadeUp(0)}>
           <Logo dark imgClassName="h-12 w-auto" />
           <p className="mt-6 max-w-sm text-sm leading-7 text-white/65">
             A real estate development, promotion, marketing and sales company
@@ -21,15 +22,16 @@ export default function Footer() {
           </p>
         </div>
 
-        <nav aria-label="Footer">
+        <nav aria-label="Footer" className="animate-fade-up" style={fadeUp(1)}>
           <h3 className="text-xs font-bold uppercase tracking-[0.24em] text-gold">Company</h3>
           <ul className="mt-5 space-y-3">
             {NAV_LINKS.concat([
               { label: "Buyer-First Approach", to: "/buyer-first" },
+              { label: "Compare Projects", to: "/compare" },
               { label: "Privacy Policy", to: "/privacy-policy" },
               { label: "Disclaimer", to: "/disclaimer" },
-            ]).map((item) => (
-              <li key={item.to + item.label}>
+            ]).map((item, i) => (
+              <li key={item.to + item.label} className="animate-fade-up" style={fadeUp(1 + i * 0.04)}>
                 <Link
                   to={item.to}
                   className="link-sweep text-sm text-white/70 transition-colors hover:text-gold"
@@ -42,11 +44,11 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <div>
+        <div className="animate-fade-up" style={fadeUp(2)}>
           <h3 className="text-xs font-bold uppercase tracking-[0.24em] text-gold">Projects</h3>
           <ul className="mt-5 space-y-3">
-            {PROJECTS.map((p) => (
-              <li key={p.slug}>
+            {PROJECTS.map((p, i) => (
+              <li key={p.slug} className="animate-fade-up" style={fadeUp(2 + i * 0.04)}>
                 <Link
                   to={`/projects/${p.slug}`}
                   className="link-sweep text-sm text-white/70 transition-colors hover:text-gold"
@@ -56,19 +58,10 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                to="/compare"
-                className="link-sweep text-sm font-semibold text-gold transition-colors hover:text-white"
-                data-testid="footer-compare-link"
-              >
-                Compare Projects
-              </Link>
-            </li>
           </ul>
         </div>
 
-        <div>
+        <div className="animate-fade-up" style={fadeUp(3)}>
           <h3 className="text-xs font-bold uppercase tracking-[0.24em] text-gold">Talk to Us</h3>
           <ul className="mt-5 space-y-4 text-sm">
             <li>
